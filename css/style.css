@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Корневая часть календаря */
+/* Но всё это будет в каком-то контейнере битрикса, так что, стили корневых блоков можно удалить */
+.calendar-container {
+  margin: 30px auto;
+  max-width: 1100px;
+}
+
+.calendar-main-block {
+/*   Где-то в стилях сайта padding для некоторых бутстраповских col-*-* (не всех) заданы с !important, поэтому их можно менять только так же, что не есть хорошо, но приходится с этим жить */
+/*   padding: 19px 10px; */
+}
+
+/* Хэдер календаря (поиск и кнопки) */
+.calendar-header__input-box {
+  padding: 14.2px 12px;
+  background: #FFFFFF;
+  border: 1px solid #F3F3F3;
+  box-sizing: border-box;
+  border-radius: 3px;
+  
+  margin-bottom: 19px;
+  
+  background-color: transparent;
+/*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
+
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height='19' viewBox='0 0 18 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M17.425 17.192L13.141 12.7559C14.2425 11.4522 14.846 9.81194 14.846 8.10432C14.846 4.11463 11.5858 0.868652 7.57853 0.868652C3.5713 0.868652 0.311035 4.11463 0.311035 8.10432C0.311035 12.094 3.5713 15.34 7.57853 15.34C9.0829 15.34 10.5165 14.8882 11.7422 14.0306L16.0587 18.5004C16.2392 18.687 16.4818 18.7898 16.7419 18.7898C16.988 18.7898 17.2215 18.6964 17.3988 18.5265C17.7755 18.1657 17.7875 17.5673 17.425 17.192ZM7.57853 2.75622C10.5405 2.75622 12.9502 5.15531 12.9502 8.10432C12.9502 11.0533 10.5405 13.4524 7.57853 13.4524C4.61655 13.4524 2.2069 11.0533 2.2069 8.10432C2.2069 5.15531 4.61655 2.75622 7.57853 2.75622Z' fill='%23555555'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='18' height='17.9212' fill='white' transform='translate(0 0.868652)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 95% center;
+}
+
+.calendar-header__input-box::placeholder {
+  text-transform: uppercase;
+}
+
+.calendar-header__top-buttons-block {
+  display: block;
+}
+@media (min-width: 992px) {
+  .calendar-header__top-buttons-block {
+    display: none;
+  }
+}
+
+.calendar-header__button {
+  padding: 14px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 11px;
+  
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: #FFFFFF;
+  
+  box-sizing: border-box;
+  border-radius: 3px;
+  
+  text-align: center;
+}
+.calendar-header__button::hover {
+  border-color: #777;
+  box-shadow: 0px 2px 4px rgba(120, 120, 120, 0.4);
+}
+
+.calendar-header__button-question {
+  background: #78B179;
+  border: 1px solid #78B179;
+  box-shadow: 0px 2px 4px rgba(120, 177, 121, 0.4);
+  
+  width: 95%;
+  float: left;
+}
+
+.calendar-header__button-question_container {
+  display: none;
+}
+@media (min-width: 992px) {
+  .calendar-header__button-question_container {
+    display: block;
+  }
+}
+
+.calendar-header__button-question_desktop {
+  padding: 16px;
+  background: #78B179;
+  border: 1px solid #78B179;
+  box-shadow: 0px 2px 4px rgba(120, 177, 121, 0.4);
+  
+  width: 95%;
+  float: right;
+  text-transform: none;
+}
+
+.calendar-header__button-filter {
+  background: #817F9E;
+  border: 1px solid #817F9E;
+  box-shadow: 0px 2px 5px rgba(129, 127, 158, 0.45);
+  
+  width: 95%;
+  float: right;
+  
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.93736 7.31106V0.421612C7.93736 0.187383 7.74998 0 7.51575 0C7.28152 0 7.09414 0.187383 7.09414 0.421612V7.31106C6.11663 7.50781 5.37646 8.37289 5.37646 9.40974C5.37646 10.4466 6.11663 11.3117 7.09414 11.5084V14.5753C7.09414 14.8095 7.28152 14.9969 7.51575 14.9969C7.74998 14.9969 7.93736 14.8095 7.93736 14.5753V11.5084C8.91488 11.3117 9.65504 10.4466 9.65504 9.40974C9.65504 8.37602 8.918 7.50781 7.93736 7.31106ZM7.51575 10.7058C6.80057 10.7058 6.21969 10.1249 6.21969 9.40974C6.21969 8.69457 6.80057 8.11368 7.51575 8.11368C8.23093 8.11368 8.81182 8.69457 8.81182 9.40974C8.81182 10.1249 8.23093 10.7058 7.51575 10.7058Z' fill='white'/%3E%3Cpath d='M2.77477 3.77577V0.421612C2.77477 0.187383 2.58738 0 2.35316 0C2.11893 0 1.93154 0.187383 1.93154 0.421612V3.77577C0.95403 3.97252 0.213867 4.8376 0.213867 5.87445C0.213867 6.91131 0.95403 7.77639 1.93154 7.97314V14.5753C1.93154 14.8095 2.11893 14.9969 2.35316 14.9969C2.58738 14.9969 2.77477 14.8095 2.77477 14.5753V7.97002C3.75228 7.77327 4.49244 6.90818 4.49244 5.87133C4.49244 4.83448 3.75228 3.97252 2.77477 3.77577ZM2.35316 7.17052C1.63798 7.17052 1.05709 6.58963 1.05709 5.87445C1.05709 5.15928 1.63798 4.57839 2.35316 4.57839C3.06833 4.57839 3.64922 5.15928 3.64922 5.87445C3.64922 6.58963 3.06521 7.17052 2.35316 7.17052Z' fill='white'/%3E%3Cpath d='M13.0682 3.77577V0.421611C13.0682 0.187383 12.8808 0 12.6466 0C12.4124 0 12.225 0.187383 12.225 0.421611V3.77577C11.2475 3.97252 10.5073 4.8376 10.5073 5.87445C10.5073 6.91131 11.2475 7.77639 12.225 7.97314V14.5784C12.225 14.8126 12.4124 15 12.6466 15C12.8808 15 13.0682 14.8126 13.0682 14.5784V7.97002C14.0457 7.77327 14.7859 6.90818 14.7859 5.87133C14.7859 4.83448 14.0489 3.97252 13.0682 3.77577ZM12.6466 7.17052C11.9314 7.17052 11.3505 6.58963 11.3505 5.87445C11.3505 5.15928 11.9314 4.57839 12.6466 4.57839C13.3618 4.57839 13.9427 5.15928 13.9427 5.87445C13.9427 6.58963 13.3618 7.17052 12.6466 7.17052Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+/*   background-size: 18px 18px; */
+  background-position: 90% center;
+}
+
+/* Блоки событий */
+.event-block {
+  padding: 16px;
+  margin-top: 30px;
+  background: #FDFDFD;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.event-block.consult {
+  border-color: #78B179;
+}
+
+.event-block__date {
+  font-family: Roboto;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: normal;
+  text-decoration-line: underline;
+  
+  float: right;
+
+  color: #817F9E;
+  
+  margin-bottom: 12px;
+}
+@media (max-width: 992px) {
+  .event-block__date {
+    display: block;
+    float: none;
+  }
+}
+.event-block__date.consult {
+  color: #78B179;
+}
+
+.event-block__tag-button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  text-decoration: none;
+
+  color: #817F9E;
+
+  padding: 4px 10px;
+  border: 1px solid #817F9E;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.event-block__tag-button.consult {
+  color: #78B179;
+  border-color: #78B179;
+}
+
+.event-block__header {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+
+  color: #555555;
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+.event-block__text {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: #555555;
+  
+  margin-bottom: 22px;
+
+  /* # Text */
+  opacity: 0.8;
+}
+
+.event-block__read-more {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  
+  text-transform: none;
+
+  color: #817F9E;
+  
+  background: #FFFFFF;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  
+  width: 95%;
+  float: left;
+}
+.event-block__read-more::hover {
+  border: 1px solid #777;
+  box-shadow: 0px 2px 4px rgba(177, 177, 177, 0.4);
+}
+
+.event-block__check-in {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  
+  text-transform: none;
+
+  color: #FFFFFF;
+  
+  background: #817F9E;
+  box-shadow: 0px 3px 5px rgba(141, 138, 185, 0.5);
+  border-radius: 3px;
+  
+  width: 95%;
+  float: right;
+}
+.event-block__check-in.completed {
+  background: #999;
+}
+
+/* Блок фильтра */
+.calendar-filter-root {
+  display: none;
+}
+@media (max-width: 992px) {
+  .calendar-filter-root {
+/*     display: none; */
+    position: absolute;
+    background: #FFF;
+    padding: 20px;
+    margin: 0;
+  }
+}
+@media (min-width: 992px) {
+  .calendar-filter-root {
+    display: block;
+  }
+}
+
+.calendar-filter-block {
+    overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .calendar-filter-block {
+    display: block;
+    
+    width: 97%;
+    
+    margin-left: 3%;
+    padding: 20px;
+    
+    background: rgba(129, 127, 158, 0.09);
+    border: 1px solid #817F9E;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+}
+
+.calendar-filter-block__title {
+  display: block;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+
+  color: #555555;
+  
+  margin-top: 10px;
+  margin-bottom: 38px;
+}
+
+@media (min-width: 992px) {
+  .calendar-filter-block__title-close-button, .calendar-filter-block__title {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .calendar-filter-block__title-close-button {
+    display: block;
+    margin-top: -5px;
+    margin-right: 10px;
+  }
+}
+
+.calendar-filter-block__button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.02em;
+
+  text-align: center;
+  text-decoration: none;
+
+  color: #555555;
+
+  display: inline-block;
+  width: 47%;
+
+  padding: 5px 0;
+  background: #FDFDFD;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.calendar-filter-block__button.this-month {
+  margin-right: 4%;
+}
+.calendar-filter-block__button.pressed {
+  color: #FFFFFF;
+  background: #555555;
+  border: 1px solid #555555;
+}
+
+.calendar-filter-block__filter-label {
+  display: inline-block;
+  
+  margin-top: 24px;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0.02em;
+
+  color: #817F9E;
+}
+
+.calendar-filter-block__filter-label-line {
+  margin-top: 34px;
+  display: inline-block;
+  
+  float: right;
+  
+  width: 70%;
+  height: 0.5px;
+  
+  border: 0.938537px solid #DBDBDB;
+}
+
+/* Селект бокс */
+.calendar-filter-block__select-box {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.calendar-filter-block__select-box select {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: normal;
+
+  color: #555555;
+  
+  background: #FDFDFD;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  border-radius: 3px;
+  
+  width: 100%;
+  
+  padding: 20px;
+  
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d)'%3E%3Ccircle cx='15' cy='13' r='10' fill='white'/%3E%3C/g%3E%3Cpath d='M15.3471 15.3475L18.3643 12.3303C18.5563 12.1384 18.5563 11.8272 18.3643 11.6353C18.1724 11.4435 17.8612 11.4435 17.6694 11.6353L14.9997 14.3051L12.3301 11.6354C12.1382 11.4436 11.827 11.4436 11.6352 11.6354C11.4432 11.8273 11.4432 12.1384 11.6352 12.3304L14.6523 15.3476C14.7483 15.4435 14.874 15.4915 14.9997 15.4915C15.1255 15.4915 15.2512 15.4434 15.3471 15.3475Z' fill='%23817F9E'/%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='0' y='0' width='30' height='30' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2.5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+/*   background-size: 18px 18px; */
+  background-position: 95% center;
+}
+
+.calendar-filter-block__select-box select option {
+  color: #555555;
+  
+  background: #FDFDFD;
+  border: 1px solid #E1E1E1;
+  
+  padding: 30px;
+}
+
+/* Даты */
+.calendar-filter-block__select-box_date {
+  display: inline-block;
+  width: 56%;
+  margin: 15px 0;
+  
+  border: 0.837989px solid #EBEBEB;
+}
+.calendar-filter-block__select-box_date select {
+  border: none;
+}
+.calendar-filter-block__select-box_date.month {
+  margin-left: -20px;
+  margin-right: -2px;
+}
+.calendar-filter-block__select-box_date.year {
+  margin-left: -3px;
+  margin-right: -25px;
+}
+
+/* Дни календаря */
+.calendar-filter-block__days {
+  width: auto;
+  margin: -20px -20px;
+}
+
+.calendar-filter-block__days .week {
+  display: flex;
+}
+
+.week .day {
+  display: block;
+  
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  
+  text-align: center;
+  text-decoration: none;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #555555;
+  background-color: #FEFEFE;
+  
+  padding: 10px;
+  border: 0.5px solid #EFEFEF;
+}
+
+.day.inactive {
+  color: #cccccc;
+}
+
+.day.title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0.02em;
+
+  color: #78B179;
+  background-color: #F9F9F9;
+}
+
+.day.selected {
+  border: 0.5px solid #817F9E;
+}
+
+.day .event-dots {
+  display: block;
+  
+  height: 4px;
+  width: 100%;
+  
+  margin-top: -7px;
+}
+
+.event-dots .dot {
+  display: inline-block;
+  
+  height: 4px;
+  width: 4px;
+  
+  border-radius: 50%;
+  
+  background: #78B179;
+}
+
+.event-dots .dot.active {
+  background: #817F9E;
+}
+
+.calendar-filter-block__bottom-buttons-block {
+    display: block;
+    position: static;
+    
+    width: 97%;
+    
+    margin-left: 3%;
+    padding: 0;
+  
+    overflow: hidden;
+}
+
+.calendar-filter-block__bottom-button {
+  display: block;
+  width: auto;
+  
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.02em;
+  
+  text-decoration: none;
+  text-align: center;
+  
+  padding: 20px;
+  margin: 10px 0;
+
+  color: #FFFFFF;
+  
+  border-radius: 3px;
+}
+.calendar-filter-block__bottom-button_access-filter {
+  background: #78B179;
+}
+.calendar-filter-block__bottom-button_remove-filter {
+  background: #EE6E6E;
+  background-image: url("data:image/svg+xml,%3Csvg width='22' height='26' viewBox='0 0 22 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)' filter='url(%23filter0_d)'%3E%3Cpath d='M20.1728 5.16612H15.5955V4.41982C15.5955 3.08553 14.51 2 13.1757 2H8.82453C7.49023 2 6.40471 3.08553 6.40471 4.41982V5.16612H1.82741C1.48818 5.16612 1.2168 5.4375 1.2168 5.77673C1.2168 6.11595 1.48818 6.38733 1.82741 6.38733H2.93102V20.7344C2.93102 22.5345 4.39648 24 6.19665 24H15.8036C17.6037 24 19.0692 22.5345 19.0692 20.7344V6.38733H20.1728C20.512 6.38733 20.7834 6.11595 20.7834 5.77673C20.7834 5.4375 20.512 5.16612 20.1728 5.16612ZM7.62592 4.41982C7.62592 3.75946 8.16416 3.22122 8.82453 3.22122H13.1757C13.836 3.22122 14.3743 3.75946 14.3743 4.41982V5.16612H7.62592V4.41982ZM17.848 20.7344C17.848 21.8606 16.9298 22.7788 15.8036 22.7788H6.19665C5.07041 22.7788 4.15224 21.8606 4.15224 20.7344V6.38733H17.8525V20.7344H17.848Z' fill='white'/%3E%3Cpath d='M11.0002 20.5896C11.3395 20.5896 11.6108 20.3182 11.6108 19.979V9.18702C11.6108 8.8478 11.3395 8.57642 11.0002 8.57642C10.661 8.57642 10.3896 8.8478 10.3896 9.18702V19.9744C10.3896 20.3137 10.661 20.5896 11.0002 20.5896Z' fill='white'/%3E%3Cpath d='M7.01491 19.9157C7.35413 19.9157 7.62551 19.6443 7.62551 19.3051V9.85646C7.62551 9.51723 7.35413 9.24585 7.01491 9.24585C6.67568 9.24585 6.4043 9.51723 6.4043 9.85646V19.3051C6.4043 19.6443 6.6802 19.9157 7.01491 19.9157Z' fill='white'/%3E%3Cpath d='M14.9846 19.9157C15.3239 19.9157 15.5952 19.6443 15.5952 19.3051V9.85646C15.5952 9.51723 15.3239 9.24585 14.9846 9.24585C14.6454 9.24585 14.374 9.51723 14.374 9.85646V19.3051C14.374 19.6443 14.6454 19.9157 14.9846 19.9157Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='-1.1' y='0.9' width='24.2' height='24.2' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='0.55'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 0.219608 0 0 0 0 0.219608 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3CclipPath id='clip0'%3E%3Crect width='22' height='22' fill='white' transform='translate(0 2)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 80%;
+}

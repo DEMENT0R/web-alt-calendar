@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>W-A Calendar</title>
+  
+  
+  <link rel='stylesheet' href='https://kasp27.ru/local/templates/anokasp/theme/css/bootstrap.grid.css'>
+<link rel='stylesheet' href='https://kasp27.ru/local/templates/anokasp/theme/css/style.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="calendar-container container-flex row">
+  <div class="calendar-main-block col-xs-12 col-md-8 row">
+    <!-- Хэдер -->
+    <div class="row">
+      <input type="text" class="calendar-header__input-box col-xs-12 col-md-7" placeholder="Поиск событий">
+      <div class="col-md-5 calendar-header__button-question_container">
+        <a href="#" class="calendar-header__button calendar-header__button-question_desktop">Задать вопрос</a>
+      </div>
+    </div>
+    <div class="calendar-header__top-buttons-block row">
+      <div class="col-xs-6">
+        <a href="#" class="calendar-header__button calendar-header__button-question">Задать вопрос</a>
+      </div>
+      <div class="col-xs-6">
+        <a href="#" class="calendar-header__button calendar-header__button-filter">Фильтр</a>
+      </div>
+    </div>
+    <!-- Блоки событий -->
+    <div class="event-block row">
+      <a href="#" class="event-block__date">01.01.2019</a>
+      <a href="#" class="event-block__tag-button">Мероприятие</a>
+      <a href="#" class="event-block__tag-button">Юридическое лицо</a>
+      <div class="event-block__header">План мероприятий на февраль 2019 года.</div>
+      <div class="event-block__text">Сегодня огромное внимание Правительства Российской Федерации уделяется развитию и укреплению экономического потенциала Дальнего Востока. Развитие Востока России объявлено национальным приоритетом развития нашей страны в целом на...</div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="calendar-header__button event-block__read-more">Читать далее</a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="calendar-header__button event-block__check-in">Записаться</a>
+      </div>
+    </div>
+
+    <div class="event-block consult row">
+      <a href="#" class="event-block__date consult">01.01.2019</a>
+      <a href="#" class="event-block__tag-button consult">Мероприятие</a>
+      <a href="#" class="event-block__tag-button consult">Юридическое лицо</a>
+      <div class="event-block__header">Lorem ipsum dolor sit amet.</div>
+      <div class="event-block__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti error alias, dolorum consequuntur fugiat unde dolore et officia porro? Facilis saepe ducimus tempore? Neque nesciunt delectus voluptatibus molestiae dolorem?</div>
+
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="calendar-header__button event-block__read-more">Читать далее</a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="calendar-header__button event-block__check-in">Записаться</a>
+      </div>
+    </div>
+
+    <div class="event-block row">
+      <a href="#" class="event-block__date">01.01.2019</a>
+      <a href="#" class="event-block__tag-button">Мероприятие</a>
+      <a href="#" class="event-block__tag-button">Юридическое лицо</a>
+      <div class="event-block__header">Lorem ipsum dolor sit amet.</div>
+      <div class="event-block__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates deleniti error alias, dolorum consequuntur fugiat unde dolore et officia porro? Facilis saepe ducimus tempore? Neque nesciunt delectus voluptatibus molestiae dolorem?</div>
+
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="calendar-header__button event-block__read-more">Читать далее</a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="calendar-header__button event-block__check-in completed">Завершено</a>
+      </div>
+    </div>
+  </div>
+  <div class="calendar-filter-root col-xs-12 col-md-4 row">
+    <!-- Блок  фильтра -->
+    <div class="calendar-filter-block col-xs-12">
+      <img class="calendar-filter-block__title-close-button" alt="Закрыть" src="data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d)'%3E%3Crect x='5' y='3' width='40' height='40' rx='3' fill='%23817F9E'/%3E%3C/g%3E%3Cpath d='M27.589 23.3446C27.4247 23.18 27.4247 22.9331 27.589 22.7685L33.7534 16.5951C33.9178 16.4305 34 16.1836 34 16.0189C34 15.8543 33.9178 15.6074 33.7534 15.4428L32.6027 14.2904C32.4384 14.1258 32.1918 14.0435 32.0274 14.0435C31.7808 14.0435 31.6164 14.1258 31.4521 14.2904L25.2877 20.4637C25.1233 20.6284 24.8767 20.6284 24.7123 20.4637L18.5479 14.2904C18.3836 14.1258 18.137 14.0435 17.9726 14.0435C17.8082 14.0435 17.5616 14.1258 17.3973 14.2904L16.2466 15.4428C16.0822 15.6074 16 15.8543 16 16.0189C16 16.1836 16.0822 16.4305 16.2466 16.5951L22.411 22.7685C22.5753 22.9331 22.5753 23.18 22.411 23.3446L16.2466 29.518C16.0822 29.6826 16 29.9296 16 30.0942C16 30.2588 16.0822 30.5057 16.2466 30.6704L17.3973 31.8227C17.5616 31.9874 17.8082 32.0697 17.9726 32.0697C18.137 32.0697 18.3836 31.9874 18.5479 31.8227L24.7123 25.6494C24.8767 25.4847 25.1233 25.4847 25.2877 25.6494L31.4521 31.8227C31.6164 31.9874 31.863 32.0697 32.0274 32.0697C32.1918 32.0697 32.4384 31.9874 32.6027 31.8227L33.7534 30.6704C33.9178 30.5057 34 30.2588 34 30.0942C34 29.9296 33.9178 29.6826 33.7534 29.518L27.589 23.3446Z' fill='white'/%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='0' y='0' width='50' height='50' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='2'/%3E%3CfeGaussianBlur stdDeviation='2.5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.505882 0 0 0 0 0.498039 0 0 0 0 0.619608 0 0 0 0.45 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A" style="float: right;" />
+      <div class="calendar-filter-block__title">Настройки фильтра</div>
+      
+      <a href="#" class="calendar-filter-block__button this-month pressed">За этот месяц</a>
+      <a href="#" class="calendar-filter-block__button this-year">За этот год</a>
+      <div class="calendar-filter-block__filter-label">Фильтр</div>
+      <hr class="calendar-filter-block__filter-label-line">
+      
+      <div class="calendar-filter-block__select-box">
+        <select>
+          <option>Тип пользователя</option>
+          <option>Пользователь 1</option>
+          <option>Пользователь 2</option>
+          <option>Пользователь 3</option>
+        </select>
+      </div>
+      
+      <div class="calendar-filter-block__select-box">
+        <select>
+          <option>Тип события</option>
+          <option>Событие 1</option>
+          <option>Событие 2</option>
+          <option>Событие 3</option>
+        </select>
+      </div>
+      
+      <div class="calendar-filter-block__select-box calendar-filter-block__select-box_date month">
+        <select>
+          <option>Январь</option>
+          <option>Февраль</option>
+          <option>Март</option>
+          <option>Апрель</option>
+        </select>
+      </div>
+      <div class="calendar-filter-block__select-box calendar-filter-block__select-box_date year">
+        <select>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+        </select>
+      </div>
+      
+      <div class="calendar-filter-block__days">
+        <div class="week">
+          <div class="day title">Пн</div>
+          <div class="day title">Вт</div>
+          <div class="day title">Ср</div>
+          <div class="day title">Чт</div>
+          <div class="day title">Пт</div>
+          <div class="day title">Сб</div>
+          <div class="day title">Вс</div>
+        </div>
+        <div class="week">
+          <a href="#" class="day inactive">29</a>
+          <a href="#" class="day inactive">30</a>
+          <a href="#" class="day inactive">31</a>
+          <a href="#" class="day">1</a>
+          <a href="#" class="day">2</a>
+          <a href="#" class="day">3</a>
+          <a href="#" class="day">4</a>
+        </div>
+        <div class="week">
+          <a href="#" class="day">5</a>
+          <a href="#" class="day selected">6
+            <div class="event-dots">
+              <div class="dot active"></div>
+              <div class="dot"></div>
+            </div>
+          </a>
+          <a href="#" class="day">7</a>
+          <a href="#" class="day">8</a>
+          <a href="#" class="day">9</a>
+          <a href="#" class="day">10</a>
+          <a href="#" class="day">11</a>
+        </div>
+        <div class="week">
+          <a href="#" class="day">12</a>
+          <a href="#" class="day">13</a>
+          <a href="#" class="day">14</a>
+          <a href="#" class="day">15</a>
+          <a href="#" class="day">16</a>
+          <a href="#" class="day">17</a>
+          <a href="#" class="day">18</a>
+        </div>
+        <div class="week">
+          <a href="#" class="day">19</a>
+          <a href="#" class="day">20</a>
+          <a href="#" class="day">21</a>
+          <a href="#" class="day">22</a>
+          <a href="#" class="day">23</a>
+          <a href="#" class="day">24</a>
+          <a href="#" class="day">25</a>
+        </div>
+        <div class="week">
+          <a href="#" class="day">26</a>
+          <a href="#" class="day">27</a>
+          <a href="#" class="day">28</a>
+          <a href="#" class="day">29</a>
+          <a href="#" class="day">30</a>
+          <a href="#" class="day">31</a>
+          <a href="#" class="day inactive">1</a>
+        </div>
+      </div>
+    </div>
+    <div class="calendar-filter-block__bottom-buttons-block">
+      <a href="#" class="calendar-filter-block__bottom-button calendar-filter-block__bottom-button_access-filter">Применить</a>
+      <a href="#" class="calendar-filter-block__bottom-button calendar-filter-block__bottom-button_remove-filter">Убрать фильтры</a>
+    </div>
+  </div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
