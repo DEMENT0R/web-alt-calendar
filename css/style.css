@@ -264,7 +264,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
 
 .calendar-filter-block {
   overflow: hidden;
-  height: 85vh;
+  height: 110vh;
 }
 
 @media (min-width: 992px) {
@@ -296,7 +296,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
 
   color: #555555;
   
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 38px;
 }
 
@@ -308,8 +308,11 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
 @media (max-width: 992px) {
   .calendar-filter-block__title-close-button {
     display: block;
-    margin-top: -5px;
-    margin-right: 10px;
+    margin-top: 0;
+    margin-right: 0;
+  }
+  .calendar-filter-block__title-close-button:hover {
+    color: #AAAAAA;
   }
 }
 
@@ -426,6 +429,11 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
   
   border: 0.837989px solid #EBEBEB;
 }
+@media (max-width: 992px) {
+  .calendar-filter-block__select-box_date {
+    width: 49%;
+  }
+}
 .calendar-filter-block__select-box_date select {
   border: none;
 }
@@ -433,15 +441,31 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
   margin-left: -20px;
   margin-right: -2px;
 }
+@media (max-width: 992px) {
+  .calendar-filter-block__select-box_date.month {
+    margin-left: 0;
+  }
+}
+
 .calendar-filter-block__select-box_date.year {
   margin-left: -3px;
   margin-right: -25px;
+}
+@media (max-width: 992px) {
+  .calendar-filter-block__select-box_date.year {
+    margin-right: 0;
+  }
 }
 
 /* Дни календаря */
 .calendar-filter-block__days {
   width: auto;
   margin: -20px -20px;
+}
+@media (max-width: 992px) {
+  .calendar-filter-block__days {
+    margin: 0;
+  }
 }
 
 .calendar-filter-block__days .week {
