@@ -14,6 +14,18 @@
 
 /* Хэдер календаря (поиск и кнопки) */
 .calendar-header__input-box {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 11px;/* identical to box height */
+  text-transform: uppercase;
+
+  color: #555555;
+
+  /* # Text */
+  opacity: 0.5;
+  
   padding: 14.2px 12px;
   background: #FFFFFF;
   border: 1px solid #F3F3F3;
@@ -350,31 +362,36 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
   border: 1px solid #555555;
 }
 
-.calendar-filter-block__filter-label {
-  display: inline-block;
-  
-  margin-top: 24px;
-  
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: normal;
-  letter-spacing: 0.02em;
-
-  color: #817F9E;
+.calendar-filter-block__filter-label, .calendar-filter-block__filter-label-line {
+  display: none;
 }
+@media (min-width: 992px) {
+  .calendar-filter-block__filter-label {
+    display: inline-block;
 
-.calendar-filter-block__filter-label-line {
-  margin-top: 34px;
-  display: inline-block;
-  
-  float: right;
-  
-  width: 70%;
-  height: 0.5px;
-  
-  border: 0.938537px solid #DBDBDB;
+    margin-top: 24px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: 0.02em;
+
+    color: #817F9E;
+  }
+  .calendar-filter-block__filter-label-line {
+    margin-top: 34px;
+    display: inline-block;
+
+    float: right;
+
+    width: 70%;
+    height: 0.5px;
+    
+    background: #DBDBDB;
+    border: 0.938537px solid #DBDBDB;
+  }
 }
 
 /* Селект бокс */
