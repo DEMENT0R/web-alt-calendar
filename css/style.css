@@ -110,7 +110,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
 
   color: #FFFFFF;
   
-  padding: 16px;
+  padding: 12px;
   background: #78B179;
   border: 1px solid #78B179;
   box-shadow: 0px 2px 4px rgba(120, 177, 121, 0.4);
@@ -460,6 +460,10 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
   background-position: 95% center;
 }
 
+select * {
+  padding: 20px;
+}
+
 .calendar-filter-block__select-box select option {
   color: #555555;
   
@@ -503,6 +507,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
 @media (max-width: 992px) {
   .calendar-filter-block__select-box_date.month {
     margin-left: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -513,6 +518,7 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
 @media (max-width: 992px) {
   .calendar-filter-block__select-box_date.year {
     margin-right: 0;
+    margin-bottom: 0;
     float: right;
   }
 }
@@ -531,6 +537,11 @@ background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='18' height=
 
 .calendar-filter-block__days .week {
   display: flex;
+}
+@media (max-width: 992px) {
+  .calendar-filter-block__days .week {
+    width: 100%;
+  }
 }
 
 .week .day {
